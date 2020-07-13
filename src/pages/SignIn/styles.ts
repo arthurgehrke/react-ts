@@ -28,39 +28,6 @@ export const Content = styled.div`
       margin-bottom: 24px;
     }
 
-    input {
-      background: #a9a9a9;
-      border-radius: 10px;
-      border: 2px solid #232129;
-      padding: 3px;
-      width: 100%;
-      color: #f4ede8;
-
-      &::placeholder {
-        color: #666360;
-      }
-
-      & + input {
-        margin-top: 8px;
-      }
-    }
-
-    button {
-      background: #0051;
-      height: 35px;
-      border-radius: 10px;
-      border: 0;
-      padding: 0 3px;
-      color: #312e38;
-      width: 100%;
-      margin-top: 16px;
-      transition: background-color 0.2s;
-
-      &:hover {
-        background: ${shade(0.2, '#0051')};
-      }
-    }
-
     a {
       color: #0051;
       display: block;
@@ -74,13 +41,14 @@ export const Content = styled.div`
     }
 
     > a {
-      color: #0051;
+      color: #666360;
       display: block;
-      margin-top: 24px;
+      margin-top: 32px;
       text-decoration: none;
       transition: color 0.2s;
       display: flex;
       align-items: center;
+      justify-content: center;
 
       svg {
         margin-right: 16px;
