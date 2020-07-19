@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import React, { useCallback, useRef } from 'react';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
@@ -53,7 +52,11 @@ const SignIn: React.FC = () => {
           formRef.current?.setErrors(errors);
         }
 
-        addToast();
+        addToast({
+          type: 'error',
+          title: 'Auth Error',
+          description: 'Its has ocurred an error in the authentication',
+        });
       }
     },
     [signIn, addToast],
