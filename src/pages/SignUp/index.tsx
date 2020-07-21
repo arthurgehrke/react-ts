@@ -4,6 +4,7 @@ import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
@@ -11,7 +12,7 @@ import logo from '../../assets/logo.svg';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, AnimationContainer, Background } from './styles';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -42,25 +43,27 @@ const SignUp: React.FC = () => {
     <Container>
       <Background />
       <Content>
-        <img src={logo} alt="BooksLogo" />
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Realize seu cadastro</h1>
+        <AnimationContainer>
+          <img src={logo} alt="BooksLogo" />
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Realize seu cadastro</h1>
 
-          <Input name="name" icon={FiUser} placeholder="nome" />
-          <Input name="email" icon={FiMail} placeholder="email" />
-          <Input
-            name="password"
-            icon={FiLock}
-            type="password"
-            placeholder="password"
-          />
-          <Button type="submit">Cadastrar</Button>
-        </Form>
+            <Input name="name" icon={FiUser} placeholder="nome" />
+            <Input name="email" icon={FiMail} placeholder="email" />
+            <Input
+              name="password"
+              icon={FiLock}
+              type="password"
+              placeholder="password"
+            />
+            <Button type="submit">Cadastrar</Button>
+          </Form>
 
-        <a href="login">
-          <FiArrowLeft />
-          Voltar para o Login
-        </a>
+          <Link to="/">
+            <FiArrowLeft />
+            Voltar para o Login
+          </Link>
+        </AnimationContainer>
       </Content>
     </Container>
   );
